@@ -1,0 +1,1 @@
+# Skills repository — maintainer notes
