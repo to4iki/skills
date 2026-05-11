@@ -65,15 +65,15 @@ git wt -d <branch-name>
 git wt -D <branch-name>
 ```
 
-## ブランチ命名規則
+## ブランチ命名例（参考）
 
 | 種別 | プレフィックス | 例 |
 |-----|-------------|-----|
-| 新機能 | `feat/` | `feat/add-dark-mode` |
-| バグ修正 | `fix/` | `fix/image-upload-error` |
-| リファクタリング | `refactor/` | `refactor/auth-module` |
-| ドキュメント | `docs/` | `docs/update-readme` |
-| 設定変更 | `chore/` | `chore/update-deps` |
+| 新機能 | `feat-` | `feat-add-dark-mode` |
+| バグ修正 | `fix-` | `fix-image-upload-error` |
+| リファクタリング | `refactor-` | `refactor-auth-module` |
+| ドキュメント | `docs-` | `docs-update-readme` |
+| 設定変更 | `chore-` | `chore-update-deps` |
 
 ## 複数エージェントの並行作業
 
@@ -81,8 +81,8 @@ Agent ツールで複数サブエージェントを起動する場合、それ�
 各エージェントに worktree パスを明示的に伝える。
 
 ```bash
-git wt feat/feature-a --nocd  # → .wt/feat/feature-a
-git wt feat/feature-b --nocd  # → .wt/feat/feature-b
+git wt feat-feature-a --nocd  # → .wt/feat-feature-a
+git wt feat-feature-b --nocd  # → .wt/feat-feature-b
 ```
 
 ## リファレンス

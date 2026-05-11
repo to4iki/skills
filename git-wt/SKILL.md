@@ -65,15 +65,15 @@ git wt -d <branch-name>
 git wt -D <branch-name>
 ```
 
-## Branch naming convention
+## Branch naming examples (reference)
 
 | Kind | Prefix | Example |
 |-----|-------------|-----|
-| New feature | `feat/` | `feat/add-dark-mode` |
-| Bug fix | `fix/` | `fix/image-upload-error` |
-| Refactoring | `refactor/` | `refactor/auth-module` |
-| Documentation | `docs/` | `docs/update-readme` |
-| Config / chores | `chore/` | `chore/update-deps` |
+| New feature | `feat-` | `feat-add-dark-mode` |
+| Bug fix | `fix-` | `fix-image-upload-error` |
+| Refactoring | `refactor-` | `refactor-auth-module` |
+| Documentation | `docs-` | `docs-update-readme` |
+| Config / chores | `chore-` | `chore-update-deps` |
 
 ## Parallel sub-agents
 
@@ -81,8 +81,8 @@ When spawning multiple sub-agents via the Agent tool, create a separate worktree
 Pass each worktree path explicitly to its agent.
 
 ```bash
-git wt feat/feature-a --nocd  # → .wt/feat/feature-a
-git wt feat/feature-b --nocd  # → .wt/feat/feature-b
+git wt feat-feature-a --nocd  # → .wt/feat-feature-a
+git wt feat-feature-b --nocd  # → .wt/feat-feature-b
 ```
 
 ## References
