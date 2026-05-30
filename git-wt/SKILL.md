@@ -1,14 +1,16 @@
 ---
 name: git-wt
 description: >
-  Create a Git worktree with the `git-wt` command and implement changes in an isolated directory.
-  After the work is done, remove the worktree pending user confirmation.
-  Trigger only when the user explicitly says "worktree", "branch off", "in a worktree", or "wt".
+  Creates a Git worktree with `git wt` and implements changes in an isolated directory.
+  After the work is done, removes the worktree pending user confirmation.
+  Use when the user says "worktree", "branch off", "wt", etc.;
+  when project or user rules require the `git-wt` skill or worktree work for non-trivial implementation;
+  or proactively after Plan mode for multi-file features, refactors, and cross-cutting config changes.
 ---
 
-# Git Worktree
+# Git Wt
 
-Create a worktree with `git-wt` and work without polluting the main branch.
+Create a worktree with `git wt` and work without polluting the main branch.
 If anything goes wrong, `git wt -d` cleans it back up.
 
 ## Workflow
@@ -65,10 +67,15 @@ git wt -d <branch-name>
 git wt -D <branch-name>
 ```
 
-## Branch naming examples (reference)
+## Branch naming
+
+Worktrees are created under `.wt/<branch-name>/`. A `/` in the branch name nests the filesystem path further and makes references and operations like `git wt -d` harder to track.
+Therefore, use a **flat, single-segment name** — do not use slashes (avoid `feat/...`).
+
+Use hyphenated prefixes for the kind of work. Do not name branches after an agent (e.g. `codex-`); match the task instead (e.g. `feat-auth-module`, not `codex-auth-module`).
 
 | Kind | Prefix | Example |
-|-----|-------------|-----|
+|-----|--------|---------|
 | New feature | `feat-` | `feat-add-dark-mode` |
 | Bug fix | `fix-` | `fix-image-upload-error` |
 | Refactoring | `refactor-` | `refactor-auth-module` |
@@ -87,4 +94,4 @@ git wt feat-feature-b --nocd  # → .wt/feat-feature-b
 
 ## References
 
-- [k1LoW/git-wt](https://github.com/k1LoW/git-wt) — implementation of the `git-wt` command this skill assumes.
+- [k1LoW/git-wt](https://github.com/k1LoW/git-wt) — implementation of the `git wt` command this skill assumes.

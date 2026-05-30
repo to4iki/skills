@@ -1,14 +1,16 @@
 ---
 name: git-wt
 description: >
-  git-wt コマンドで Git worktree を作成し、作業ディレクトリを分離して実装を行う。
+  `git wt` で Git worktree を作成し、作業ディレクトリを分離して実装を行う。
   作業完了後はユーザー確認を経て worktree を削除する。
-  ユーザーが「worktree」「ワークツリー」「ブランチを分けて」「wt で」など明示的に指定した場合にのみ起動する。
+  ユーザーが「worktree」「ワークツリー」「ブランチを分けて」「wt で」などと指定したとき、
+  ルールで `git-wt` スキルや worktree 作業が求められる非軽微な実装のとき、
+  Plan 終了後・複数ファイルの機能追加・リファクタ・横断的な設定変更では積極的に使う。
 ---
 
-# Git Worktree
+# Git Wt
 
-`git-wt` で worktree を作成し、メインブランチを汚さず作業する。
+`git wt` で worktree を作成し、メインブランチを汚さず作業する。
 失敗しても `git wt -d` で綺麗に元に戻せる。
 
 ## 実行手順
@@ -65,7 +67,12 @@ git wt -d <branch-name>
 git wt -D <branch-name>
 ```
 
-## ブランチ命名例（参考）
+## ブランチ命名
+
+worktree は `.wt/<branch-name>/` に作られる。ブランチ名に `/` があると実パスもネストし、参照や `git wt -d` などの操作が分かりにくくなる。
+そのため **フラットな1段の名前** にする。`/` で区切らない（`feat/...` のような形式は使わない）。
+
+種別はハイフン区切りのプレフィックスで表す。エージェント名（`codex-` など）ではなく作業内容に合わせる（例: `codex-auth-module` ではなく `feat-auth-module`）。
 
 | 種別 | プレフィックス | 例 |
 |-----|-------------|-----|
@@ -87,4 +94,4 @@ git wt feat-feature-b --nocd  # → .wt/feat-feature-b
 
 ## リファレンス
 
-- [k1LoW/git-wt](https://github.com/k1LoW/git-wt) — 本スキルが前提とする `git-wt` コマンドの実装。
+- [k1LoW/git-wt](https://github.com/k1LoW/git-wt) — 本スキルが前提とする `git wt` コマンドの実装。
