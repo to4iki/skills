@@ -3,15 +3,10 @@ name: git-wt
 description: >
   Creates a Git worktree with `git wt` and implements changes in an isolated directory.
   After the work is done, removes the worktree pending user confirmation.
-  Use when the user says "worktree", "branch off", "wt", etc.;
-  when project or user rules require the `git-wt` skill or worktree work for non-trivial implementation;
-  or proactively after Plan mode for multi-file features, refactors, and cross-cutting config changes.
+  Use when the user explicitly says "worktree", "branch off", "wt", "git-wt", etc.
 ---
 
 # Git Wt
-
-Create a worktree with `git wt` and work without polluting the main branch.
-If anything goes wrong, `git wt -d` cleans it back up.
 
 ## Workflow
 
@@ -42,7 +37,7 @@ After the work is done, tell the user:
 
 ### Step 4: Cleanup
 
-Following the behavior of Claude Code's `claude -w`, branch cleanup based on whether there are changes.
+Branch cleanup based on whether there are changes.
 
 #### No changes (nothing committed, nothing modified)
 
@@ -84,7 +79,7 @@ Use hyphenated prefixes for the kind of work. Do not name branches after an agen
 
 ## Parallel sub-agents
 
-When spawning multiple sub-agents via the Agent tool, create a separate worktree per branch name.
+When spawning multiple sub-agents in parallel, create a separate worktree per branch name.
 Pass each worktree path explicitly to its agent.
 
 ```bash
