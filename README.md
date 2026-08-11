@@ -1,6 +1,7 @@
 # to4iki/skills
 
 A collection of agent skills, distributed via [APM](https://github.com/microsoft/apm) (Agent Package Manager).
+Skills follow the [Agent Skills](https://agentskills.io) specification.
 
 ## Install
 
@@ -14,6 +15,7 @@ Or add to a project's `apm.yml`:
 
 ```yaml
 targets:
+  - agent-skills
   - claude
 dependencies:
   apm:
