@@ -47,3 +47,4 @@ gh skill install to4iki/skills <category>/<skill-name> --agent claude-code --sco
 ### Misc
 
 - **[cursor-edit](./misc/cursor-edit/SKILL.md)** — Delegate file edits to Cursor through the headless `cursor-agent` CLI.
+- **[use-claude-artifact](./misc/use-claude-artifact/SKILL.md)** — Create review/explanation/design HTML as a Claude artifact instead of a repo file.
