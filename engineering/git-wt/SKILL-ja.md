@@ -87,6 +87,6 @@ git wt feat-feature-a --nocd  # → .wt/feat-feature-a
 git wt feat-feature-b --nocd  # → .wt/feat-feature-b
 ```
 
-## リファレンス
+## Gotchas
 
-- [k1LoW/git-wt](https://github.com/k1LoW/git-wt) — 本スキルが前提とする `git wt` コマンドの実装。
+- `git wt` が無いときは中断し、[k1LoW/git-wt](https://github.com/k1LoW/git-wt) の導入を伝える。ユーザーが求めない限り raw の `git worktree` にフォールバックしない

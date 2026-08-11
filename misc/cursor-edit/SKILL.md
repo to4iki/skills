@@ -104,7 +104,7 @@ Do not edit any files other than the specified file.
 - **`cursor-agent` does not verify semantic assumptions**; it mainly pattern-matches sibling files. `git diff` and builds do not prove the semantic correctness of claims or logic. For new or non-obvious logic, such as whether an assertion is really valid or whether an API actually exists, the calling AI agent must verify the behavior against use cases and sibling tests. Be especially careful when there is no good sibling example. Confirm with search before claiming that something is absent or nonexistent.
 - Build, test, and lint the changed scope according to the project's conventions.
 
-## Fallbacks
+## Gotchas
 
 - If `cursor-agent` is missing or authentication fails, report that the execution environment does not meet the prerequisite and stop.
 - If `cursor-agent` fails or edits against the instructions, make the instructions more specific and retry.

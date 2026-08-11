@@ -87,6 +87,6 @@ git wt feat-feature-a --nocd  # → .wt/feat-feature-a
 git wt feat-feature-b --nocd  # → .wt/feat-feature-b
 ```
 
-## References
+## Gotchas
 
-- [k1LoW/git-wt](https://github.com/k1LoW/git-wt) — implementation of the `git wt` command this skill assumes.
+- If `git wt` is missing, stop and tell the user to install [k1LoW/git-wt](https://github.com/k1LoW/git-wt) — do not fall back to raw `git worktree` unless the user asks

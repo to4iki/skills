@@ -46,3 +46,8 @@ Read `references/html-output.md` when detailed representation patterns are usefu
 ## When done
 
 Point the user to the notes file and call out open questions and verification results first.
+
+## Gotchas
+
+- Do not wait until the end to write notes; update continuously as decisions happen
+- Do not dump large code blocks into the notes; link to paths instead
